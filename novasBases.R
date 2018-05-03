@@ -1,53 +1,53 @@
 library(rio)
 #importação dos dados - introdução à programação
-introPro122 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 12.2.xlsx")
-introPro131 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 13.1.xlsx")
-introPro132 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 13.2.xlsx")
-introPro141 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 14.1.xlsx")
-introPro142 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 14.2.xlsx")
-introPro151 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 15.1.xlsx")
-introPro152 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 15.2.xlsx")
-introPro162 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 16.2.xlsx")
-introPro171 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/INT. A PROGRAMACAO 17.1.xlsx")
+introPro122 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 12.2.xlsx")
+introPro131 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 13.1.xlsx")
+introPro132 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 13.2.xlsx")
+introPro141 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 14.1.xlsx")
+introPro142 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 14.2.xlsx")
+introPro151 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 15.1.xlsx")
+introPro152 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 15.2.xlsx")
+introPro162 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 16.2.xlsx")
+introPro171 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/INT. A PROGRAMACAO 17.1.xlsx")
 
 #estrutura de dados
-estruDados131 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 13.1.xlsx")
-estruDados132 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 13.2.xlsx")
-estruDados141 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 14.1.xlsx")
-estruDados142 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 14.2.xlsx")
-estruDados151 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 15.1.xlsx")
-estruDados152 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 15.2.xlsx")
-estruDados161 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 16.1.xlsx")
-estruDados171 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/EST. DE DADOS 17.1.xlsx")
+estruDados131 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 13.1.xlsx")
+estruDados132 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 13.2.xlsx")
+estruDados141 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 14.1.xlsx")
+estruDados142 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 14.2.xlsx")
+estruDados151 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 15.1.xlsx")
+estruDados152 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 15.2.xlsx")
+estruDados161 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 16.1.xlsx")
+estruDados171 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/EST. DE DADOS 17.1.xlsx")
 
 #lp1
-lp1132 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 13.2.xlsx")
-lp1141 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 14.1.xlsx")
-lp1142 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 14.2.xlsx")
-lp1151 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 15.1.xlsx")
-lp1152 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 15.2.xlsx")
-lp1161 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 16.1.xlsx")
-lp1162 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 16.2.xlsx")
-lp1171 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP1 17.1.xlsx")
+lp1132 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 13.2.xlsx")
+lp1141 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 14.1.xlsx")
+lp1142 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 14.2.xlsx")
+lp1151 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 15.1.xlsx")
+lp1152 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 15.2.xlsx")
+lp1161 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 16.1.xlsx")
+lp1162 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 16.2.xlsx")
+lp1171 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP1 17.1.xlsx")
 
 #POO
-poo141 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 14.1.xlsx")
-poo142 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 14.2.xlsx")
-poo151 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 15.1.xlsx")
-poo152 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 15.2.xlsx")
-poo161 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 16.1.xlsx")
-poo162 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 16.2.xlsx")
-poo171 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/POO 17.1.xlsx")
+poo141 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 14.1.xlsx")
+poo142 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 14.2.xlsx")
+poo151 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 15.1.xlsx")
+poo152 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 15.2.xlsx")
+poo161 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 16.1.xlsx")
+poo162 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 16.2.xlsx")
+poo171 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/POO 17.1.xlsx")
 
 #lp2
-lp2142 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP2 14.2.xlsx")
-lp2151 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP2 15.1.xlsx")
-lp2152 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP2 15.2.xlsx")
-lp2162 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP2 16.2.xlsx")
-lp2171 <- import(file = "C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/Dados/LP2 17.1.xlsx")
+lp2142 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP2 14.2.xlsx")
+lp2151 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP2 15.1.xlsx")
+lp2152 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP2 15.2.xlsx")
+lp2162 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP2 16.2.xlsx")
+lp2171 <- import(file = "C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/Dados/LP2 17.1.xlsx")
 
 getwd()
-setwd("C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/BasesNovas")
+setwd("C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/BasesNovas")
 
 #criação das novas bases 
 
@@ -78,7 +78,7 @@ write.csv(introP162, "introP162.csv", row.names = TRUE)
 introP171 <- data.frame(introPro171$Matricula, introPro171$ano_letivo_ini, introPro171$Periodo_letivo_ini, introPro171$DT_Rematricula, introPro171$SIT_Matricula_Periodo, introPro171$cod_turma, introPro171$Periodo, introPro171$desc_curso, introPro171$Desc_Cota, introPro171$Renda_Familiar, introPro171$Tipo_escola_Origem, introPro171$bairro, introPro171$sexo, introPro171$complemento, introPro171$Texto_cidade, introPro171$Desc_Area_Procedencia_Escola_Origem, introPro171$Desc_Estado_Civil, introPro171$Coeficiente_Rendimento, introPro171$necessidade_fisica)
 write.csv(introP171, "introP171.csv", row.names = TRUE)
 
-setwd("C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/BasesNovas/EstruturaDados")
+setwd("C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/BasesNovas/EstruturaDados")
 
 ed131 <- data.frame(estruDados131$Matricula, estruDados131$ano_letivo_ini, estruDados131$Periodo_letivo_ini, estruDados131$DT_Rematricula, estruDados131$SIT_Matricula_Periodo, estruDados131$cod_turma, estruDados131$Periodo, estruDados131$desc_curso, estruDados131$Desc_Cota, estruDados131$Renda_Familiar, estruDados131$Tipo_escola_Origem, estruDados131$bairro, estruDados131$sexo, estruDados131$complemento, estruDados131$Texto_cidade, estruDados131$Desc_Area_Procedencia_Escola_Origem, estruDados131$Desc_Estado_Civil, estruDados131$Coeficiente_Rendimento, estruDados131$necessidade_fisica)
 write.csv(ed131, "ed131.csv", row.names = TRUE)
@@ -105,7 +105,7 @@ ed171 <- data.frame(estruDados171$Matricula, estruDados171$ano_letivo_ini, estru
 write.csv(ed171, "ed171.csv", row.names = TRUE)
 
 #lp1
-setwd("C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/BasesNovas/Lp1")
+setwd("C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/BasesNovas/Lp1")
 
 Lp1132 <- data.frame(lp1132$Matricula, lp1132$ano_letivo_ini, lp1132$Periodo_letivo_ini, lp1132$DT_Rematricula, lp1132$SIT_Matricula_Periodo, lp1132$cod_turma, lp1132$Periodo, lp1132$desc_curso, lp1132$Desc_Cota, lp1132$Renda_Familiar, lp1132$Tipo_escola_Origem, lp1132$bairro, lp1132$sexo, lp1132$complemento, lp1132$Texto_cidade, lp1132$Desc_Area_Procedencia_Escola_Origem, lp1132$Desc_Estado_Civil, lp1132$Coeficiente_Rendimento, lp1132$necessidade_fisica)
 write.csv(Lp1132, "lp1132.csv", row.names = TRUE)
@@ -132,7 +132,7 @@ Lp1171 <- data.frame(lp1171$Matricula, lp1171$ano_letivo_ini, lp1171$Periodo_let
 write.csv(Lp1171, "lp1171.csv", row.names = TRUE)
 
 #poo
-setwd("C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/BasesNovas/Poo")
+setwd("C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/BasesNovas/Poo")
 
 POO141 <- data.frame(poo141$Matricula, poo141$ano_letivo_ini, poo141$Periodo_letivo_ini, poo141$DT_Rematricula, poo141$SIT_Matricula_Periodo, poo141$cod_turma, poo141$Periodo, poo141$desc_curso, poo141$Desc_Cota, poo141$Renda_Familiar, poo141$Tipo_escola_Origem, poo141$bairro, poo141$sexo, poo141$complemento, poo141$Texto_cidade, poo141$Desc_Area_Procedencia_Escola_Origem, poo141$Desc_Estado_Civil, poo141$Coeficiente_Rendimento, poo141$necessidade_fisica)
 write.csv(POO141, "poo141.csv", row.names = TRUE)
@@ -155,7 +155,7 @@ write.csv(POO162, "poo162.csv", row.names = TRUE)
 POO171 <- data.frame(poo171$Matricula, poo171$ano_letivo_ini, poo171$Periodo_letivo_ini, poo171$DT_Rematricula, poo171$SIT_Matricula_Periodo, poo171$cod_turma, poo171$Periodo, poo171$desc_curso, poo171$Desc_Cota, poo171$Renda_Familiar, poo171$Tipo_escola_Origem, poo171$bairro, poo171$sexo, poo171$complemento, poo171$Texto_cidade, poo171$Desc_Area_Procedencia_Escola_Origem, poo171$Desc_Estado_Civil, poo171$Coeficiente_Rendimento, poo171$necessidade_fisica)
 write.csv(POO171, "poo171.csv", row.names = TRUE)
 
-setwd("C:/Users/bolsista/Documents/Joyce/Ciencia de Dados/Artigo-Divas/BasesNovas/Lp2")
+setwd("C:/Users/bolsista/Documents/Joyce/CienciadeDados/Artigo-Divas/BasesNovas/Lp2")
 
 Lp2142 <- data.frame(lp2142$Matricula, lp2142$ano_letivo_ini, lp2142$Periodo_letivo_ini, lp2142$DT_Rematricula, lp2142$SIT_Matricula_Periodo, lp2142$cod_turma, lp2142$Periodo, lp2142$desc_curso, lp2142$Desc_Cota, lp2142$Renda_Familiar, lp2142$Tipo_escola_Origem, lp2142$bairro, lp2142$sexo, lp2142$complemento, lp2142$Texto_cidade, lp2142$Desc_Area_Procedencia_Escola_Origem, lp2142$Desc_Estado_Civil, lp2142$Coeficiente_Rendimento, lp2142$necessidade_fisica)
 write.csv(Lp2142, "lp2142.csv", row.names = TRUE)
