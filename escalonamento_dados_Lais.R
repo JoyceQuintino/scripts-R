@@ -404,5 +404,28 @@ class(x)
 print(mmetric(y, x, c("ALL")))
 
 library(caret)
-confusionMatrix(matrizConfusao)
+confusionMatrix(matrizConfusao2)
 ################################################################################
+
+library(ROCR)
+
+data("ROCR.simple")
+
+
+pred <- prediction(ROCR.simple$predictions, ROCR.simple$labels)
+
+perf <- performance(pred,"tpr", "fpr")
+plot(perf,colorize = TRUE)
+
+perf1 <- performance(pred, "sens", "spec")
+plot(perf1)
+
+
+## Calcula area abaixo da curva
+auc<-(performance(pred,"auc")@y.values)[[1]]
+pred <- prediction(predictions = model2, labels = juncaoSimNao$morto)
+perf <- performance(pred, measure = "tpr", x.measure = "fpr")
+plot(perf, main = "ic", col = "blue", lwd = 3)
+abline(a = 0, b = 1, lwd = 2, lty = 2)
+perf.auc <- performance(pred, measure = "auc")
+unlist(perf.auc@y.values)
