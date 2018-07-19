@@ -40,6 +40,8 @@ nrow(amostraNao)
 library(gtools)
 
 juncaoSimNao <- smartbind(laisSim, amostraNao)
+juncaoSimNao$ssexo <- NULL
+juncaoSimNao$rracacor <- NULL
 juncaoSimNao
 nrow(juncaoSimNao)
 ncol(juncaoSimNao)
@@ -324,7 +326,7 @@ library(ggplot2)
 library(caret)
 
 #cuidado com esse modelo - não apagar ou substituir
-model2 <- train(morto~., data = juncaoSimNao, trControl= trainControl(method = "cv", number = 100), method="rf", ntree = 10)
+model2 <- train(morto~., data = juncaoSimNao, trControl= trainControl(method = "cv", number = 10), method="rf", ntree = 100)
 model2
 
 table(predict(model2), juncaoSimNao$morto)
