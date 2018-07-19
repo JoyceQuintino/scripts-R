@@ -3,6 +3,8 @@ library(rio)
 lais <- import(file = "C:/Users/mafer/Desktop/Coisas do curso de R/dados.arff")
 lais
 
+lais$ssexo <- NULL
+lais$rracacor <- NULL
 
 class(lais)
 
@@ -71,7 +73,7 @@ library(caTools)
 ######################################################
 #USANDO random forest
 library(randomForest)
-#set.seed(1)
+set.seed(1)
 #classificador = randomForest(x = base_treinamento[-17], y = base_treinamento$morto, ntree = 100)
 #previsoes = predict(classificador, newdata = base_teste[-17])
 
@@ -93,8 +95,6 @@ juncaoSimNao$iidanomal = factor(juncaoSimNao$iidanomal)
 juncaoSimNao$eestcivmae = factor(juncaoSimNao$eestcivmae)
 juncaoSimNao$ggravidez = factor(juncaoSimNao$ggravidez)
 juncaoSimNao$pparto = factor(juncaoSimNao$pparto)
-juncaoSimNao$ssexo = factor(juncaoSimNao$ssexo)
-juncaoSimNao$rracacor = factor(juncaoSimNao$rracacor)
 juncaoSimNao$llocnas = factor(juncaoSimNao$llocnas)
 juncaoSimNao$iidanomal = factor(juncaoSimNao$iidanomal)
 juncaoSimNao$ppeso = factor(juncaoSimNao$ppeso)
@@ -111,9 +111,7 @@ levels(juncaoSimNao$ggestacao) = c("<22", ">=42", "22-27", "28-31", "32-36", "37
 levels(juncaoSimNao$ggravidez) = c("Campo-em-branco", "Dupla", "Tripla-e-mais", "Unica", "3", "2", "1", "0")
 levels(juncaoSimNao$pparto) = c("Campo-em-branco", "Cesario", "Vaginal", "3", "2", "1", "0")
 levels(juncaoSimNao$cconsultas) = c(">=7", "0.0", "1-3", "4-6", "Campo-em-branco", "Ignorado", "Campo-em-branco", "3", "2", "1", "0")
-levels(juncaoSimNao$ssexo) = c("Feminino", "Ignorado", "Masculino", "3", "2", "1", "0")
 levels(juncaoSimNao$aapgar1) = c("0-2", "3-4", "5-6", "7-8", "9-10" , "Campo-em-branco", "Errado", "4", "3", "2", "1", "0")
-levels(juncaoSimNao$rracacor) = c("Branca", "Campo-em-branco", "Parda", "3", "2", "1", "0")
 levels(juncaoSimNao$aapgar5) = c("0-2", "3-4", "5-6", "7-8", "9-10", "Campo-em-branco", "Errado", "3", "2", "1", "0")
 levels(juncaoSimNao$llocnas) = c("Domicilio", "Hospital", "Outro", "3", "2", "1", "0")
 levels(juncaoSimNao$iidanomal) = c("Campo-em-branco", "Com-anomalia", "Ignorado", "Sem-anomalia", "3", "2", "1", "0")
@@ -211,61 +209,49 @@ juncaoSimNao[juncaoSimNao$cconsultas == "Ignorado", 9] <- "0"
 
 as.numeric(as.character(juncaoSimNao$cconsultas))
 
-juncaoSimNao[juncaoSimNao$ssexo == "Feminino", 10] <- "1"
-juncaoSimNao[juncaoSimNao$ssexo == "Masculino", 10] <- "2"
-juncaoSimNao[juncaoSimNao$ssexo == "Ignorado", 10] <- "0"
-
-as.numeric(as.character(juncaoSimNao$ssexo))
-
-juncaoSimNao[juncaoSimNao$aapgar1 == "Campo-em-branco", 11] <- "0"
-juncaoSimNao[juncaoSimNao$aapgar1 == "Errado", 11] <- "0"
-juncaoSimNao[juncaoSimNao$aapgar1 == "0-2", 11] <- "3"
-juncaoSimNao[juncaoSimNao$aapgar1 == "3-4", 11] <- "3"
-juncaoSimNao[juncaoSimNao$aapgar1 == "5-6", 11] <- "2"
-juncaoSimNao[juncaoSimNao$aapgar1 == "7-8", 11] <- "2"
-juncaoSimNao[juncaoSimNao$aapgar1 == "9-10", 11] <- "1"
+juncaoSimNao[juncaoSimNao$aapgar1 == "Campo-em-branco", 10] <- "0"
+juncaoSimNao[juncaoSimNao$aapgar1 == "Errado", 10] <- "0"
+juncaoSimNao[juncaoSimNao$aapgar1 == "0-2", 10] <- "3"
+juncaoSimNao[juncaoSimNao$aapgar1 == "3-4", 10] <- "3"
+juncaoSimNao[juncaoSimNao$aapgar1 == "5-6", 10] <- "2"
+juncaoSimNao[juncaoSimNao$aapgar1 == "7-8", 10] <- "2"
+juncaoSimNao[juncaoSimNao$aapgar1 == "9-10", 10] <- "1"
 
 as.numeric(as.character(juncaoSimNao$aapgar1))
 
-juncaoSimNao[juncaoSimNao$rracacor == "Branca", 12] <- "1"
-juncaoSimNao[juncaoSimNao$rracacor == "Campo-em-branco", 12] <- "0"
-juncaoSimNao[juncaoSimNao$rracacor == "Parda", 12] <- "2"
-
-as.numeric(as.character(juncaoSimNao$rracacor))
-
-juncaoSimNao[juncaoSimNao$aapgar5 == "Campo-em-branco", 13] <- "0"
-juncaoSimNao[juncaoSimNao$aapgar5 == "Errado", 13] <- "0"
-juncaoSimNao[juncaoSimNao$aapgar5 == "0-2", 13] <- "3"
-juncaoSimNao[juncaoSimNao$aapgar5 == "3-4", 13] <- "3"
-juncaoSimNao[juncaoSimNao$aapgar5 == "5-6", 13] <- "2"
-juncaoSimNao[juncaoSimNao$aapgar5 == "7-8", 13] <- "2"
-juncaoSimNao[juncaoSimNao$aapgar5 == "9-10", 13] <- "1"
+juncaoSimNao[juncaoSimNao$aapgar5 == "Campo-em-branco", 11] <- "0"
+juncaoSimNao[juncaoSimNao$aapgar5 == "Errado", 11] <- "0"
+juncaoSimNao[juncaoSimNao$aapgar5 == "0-2", 11] <- "3"
+juncaoSimNao[juncaoSimNao$aapgar5 == "3-4", 11] <- "3"
+juncaoSimNao[juncaoSimNao$aapgar5 == "5-6", 11] <- "2"
+juncaoSimNao[juncaoSimNao$aapgar5 == "7-8", 11] <- "2"
+juncaoSimNao[juncaoSimNao$aapgar5 == "9-10", 11] <- "1"
 
 as.numeric(as.character(juncaoSimNao$aapgar5))
 
-juncaoSimNao[juncaoSimNao$llocnas == "Hospital", 14] <- "1"
-juncaoSimNao[juncaoSimNao$llocnas == "Domicilio", 14] <- "2"
-juncaoSimNao[juncaoSimNao$llocnas == "Outro", 14] <- "2"
+juncaoSimNao[juncaoSimNao$llocnas == "Hospital", 12] <- "1"
+juncaoSimNao[juncaoSimNao$llocnas == "Domicilio", 12] <- "2"
+juncaoSimNao[juncaoSimNao$llocnas == "Outro", 12] <- "2"
 
 as.numeric(as.character(juncaoSimNao$llocnas))
 
-juncaoSimNao[juncaoSimNao$iidanomal == "Com-anomalia", 15] <- "2"
-juncaoSimNao[juncaoSimNao$iidanomal == "Sem-anomalia", 15] <- "1"
-juncaoSimNao[juncaoSimNao$iidanomal == "Campo-em-branco", 15] <- "0"
-juncaoSimNao[juncaoSimNao$iidanomal == "Ignorado", 15] <- "0"
+juncaoSimNao[juncaoSimNao$iidanomal == "Com-anomalia", 13] <- "2"
+juncaoSimNao[juncaoSimNao$iidanomal == "Sem-anomalia", 13] <- "1"
+juncaoSimNao[juncaoSimNao$iidanomal == "Campo-em-branco", 13] <- "0"
+juncaoSimNao[juncaoSimNao$iidanomal == "Ignorado", 13] <- "0"
 
 as.numeric(as.character(juncaoSimNao$iidanomal))
 
-juncaoSimNao[juncaoSimNao$ppeso == "<=1000", 16] <- "3"
-juncaoSimNao[juncaoSimNao$ppeso == "1001-1500", 16] <- "3"
-juncaoSimNao[juncaoSimNao$ppeso == "1501-2500", 16] <- "2"
-juncaoSimNao[juncaoSimNao$ppeso == "2501-4000", 16] <- "1"
-juncaoSimNao[juncaoSimNao$ppeso == "4001-7000", 16] <- "2"
+juncaoSimNao[juncaoSimNao$ppeso == "<=1000", 14] <- "3"
+juncaoSimNao[juncaoSimNao$ppeso == "1001-1500", 14] <- "3"
+juncaoSimNao[juncaoSimNao$ppeso == "1501-2500", 14] <- "2"
+juncaoSimNao[juncaoSimNao$ppeso == "2501-4000", 14] <- "1"
+juncaoSimNao[juncaoSimNao$ppeso == "4001-7000", 14] <- "2"
 
 as.numeric(as.character(juncaoSimNao$ppeso))
 
-juncaoSimNao[juncaoSimNao$morto == "YES", 17] <- "1"
-juncaoSimNao[juncaoSimNao$morto == "NO", 17] <- "0"
+juncaoSimNao[juncaoSimNao$morto == "YES", 15] <- "1"
+juncaoSimNao[juncaoSimNao$morto == "NO", 15] <- "0"
 
 as.numeric(as.character(juncaoSimNao$morto))
 
@@ -343,7 +329,7 @@ model2
 
 table(predict(model2), juncaoSimNao$morto)
 previsoes = predict(model2, newdata = juncaoSimNao)
-matrizConfusao = table(juncaoSimNao[, 17],previsoes)
+matrizConfusao = table(juncaoSimNao[, 15],previsoes)
 print(matrizConfusao)
 
 ##
@@ -396,31 +382,35 @@ base_teste$morto = factor(base_teste$morto, levels = c('0', '1'))
 
 
 y=juncaoSimNao$morto
-x=previsoes
+x=previsoes2
 
 table(y)
 class(y)
 class(x)
 print(mmetric(y, x, c("ALL")))
 
-library(caret)
+library(rminer)
 confusionMatrix(matrizConfusao2)
 ################################################################################
 
+cv.tree()
 library(ROCR)
 
 data("ROCR.simple")
 
 
-pred <- prediction(ROCR.simple$predictions, ROCR.simple$labels)
+class(previsoes)
+class(juncaoSimNao$morto)
 
-perf <- performance(pred,"tpr", "fpr")
+pred <- prediction(previsoes, juncaoSimNao$morto)
+
+perf <- performance(previsoes,"tpr", "fpr")
 plot(perf,colorize = TRUE)
 
-perf1 <- performance(pred, "sens", "spec")
-plot(perf1)
+perf1 <- performance(previsoes, "sens", "spec")
+plot(perf1, colorize = TRUE)
 
-
+plot.Roc
 ## Calcula area abaixo da curva
 auc<-(performance(pred,"auc")@y.values)[[1]]
 pred <- prediction(predictions = model2, labels = juncaoSimNao$morto)
